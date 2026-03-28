@@ -9,7 +9,9 @@ const skillCategories = [
       "TypeScript",
       "Java",
       "C/C++",
-      "SQL"
+      "SQL",
+      "Perl",
+      "Prolog"
     ],
   },
 
