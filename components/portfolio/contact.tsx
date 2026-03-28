@@ -5,7 +5,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react"
-import emailjs from "@emailjs/browser" 
+import emailjs from "@emailjs/browser"
+
+// Initialize EmailJS once
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_KEY!)
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -25,15 +28,14 @@ export function Contact() {
 
     try {
       await emailjs.send(
-        "service_djkl85r",       
-        "template_abc123",      
-        formData,
-        "fc_owiYA4em-rDFsa" 
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE!,
+        formData
       )
 
       setSubmitted(true)
-    } catch (error) {
-      console.error("Failed to send message:", error)
+    } catch (error: any) {
+      console.error("Failed to send message:", error?.text || error)
       alert("Failed to send message. Please try again later.")
     }
 
@@ -43,27 +45,19 @@ export function Contact() {
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-
         <div className="flex items-center gap-4 mb-12">
           <span className="text-primary font-mono">07.</span>
-
-          <h2 className="text-3xl font-bold text-foreground">
-            Get In Touch
-          </h2>
-
+          <h2 className="text-3xl font-bold text-foreground">Get In Touch</h2>
           <div className="flex-1 h-px bg-border" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-
           {/* Contact Info */}
           <div className="space-y-8">
-
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Let's work together
               </h3>
-
               <p className="text-muted-foreground leading-relaxed">
                 I'm currently seeking Software Engineering and AI/ML internship 
                 opportunities. If you have an opportunity, collaboration idea, 
@@ -72,18 +66,13 @@ export function Contact() {
             </div>
 
             <div className="space-y-6">
-
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
-
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <a
-                    href="mailto:biharifernando00@gmail.com"
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
+                  <a href="mailto:biharifernando00@gmail.com" className="text-foreground hover:text-primary transition-colors">
                     biharifernando00@gmail.com
                   </a>
                 </div>
@@ -93,13 +82,9 @@ export function Contact() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
-
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <a
-                    href="tel:+94722042501"
-                    className="text-foreground hover:text-primary transition-colors"
-                  >
+                  <a href="tel:+94722042501" className="text-foreground hover:text-primary transition-colors">
                     +94 72 204 2501
                   </a>
                 </div>
@@ -109,50 +94,31 @@ export function Contact() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
-
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
                   <p className="text-foreground">Sri Lanka</p>
                 </div>
               </div>
-
             </div>
-
           </div>
 
           {/* Contact Form */}
           <div className="bg-card border border-border rounded-lg p-8">
-
             {submitted ? (
-
               <div className="flex flex-col items-center justify-center h-full py-12 text-center">
-
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Send className="h-8 w-8 text-primary" />
                 </div>
-
-                <h4 className="text-xl font-semibold text-foreground mb-2">
-                  Message Sent Successfully
-                </h4>
-
+                <h4 className="text-xl font-semibold text-foreground mb-2">Message Sent Successfully</h4>
                 <p className="text-muted-foreground">
                   Thank you for reaching out. I will respond as soon as possible.
                 </p>
-
-                <Button
-                  variant="outline"
-                  className="mt-6"
-                  onClick={() => setSubmitted(false)}
-                >
+                <Button variant="outline" className="mt-6" onClick={() => setSubmitted(false)}>
                   Send Another Message
                 </Button>
-
               </div>
-
             ) : (
-
               <form onSubmit={handleSubmit} className="space-y-6">
-
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Name</label>
@@ -188,13 +154,9 @@ export function Contact() {
                     </>
                   )}
                 </Button>
-
               </form>
-
             )}
-
           </div>
-
         </div>
       </div>
     </section>
