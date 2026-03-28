@@ -1,10 +1,27 @@
-import Image from "next/image";
+import { Navbar } from "@/components/portfolio/navbar"
+import { Hero } from "@/components/portfolio/hero"
+import { About } from "@/components/portfolio/about"
+import { Skills } from "@/components/portfolio/skills"
+import { Experience } from "@/components/portfolio/experience"
+import { Volunteer } from "@/components/portfolio/volunteer"
+import { Projects } from "@/components/portfolio/projects"
+import { Achievements } from "@/components/portfolio/achievements"
+import { Contact } from "@/components/portfolio/contact"
+import { Footer } from "@/components/portfolio/footer"
 
-export default function Home() {
+export default function Portfolio() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      
-    
-    </div>
-  );
+    <main className="min-h-screen bg-background">
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Experience />
+      <Volunteer />
+      <Projects />
+      <Achievements />
+      <Contact />
+      <Footer />
+    </main>
+  )
 }
