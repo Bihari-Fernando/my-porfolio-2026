@@ -28,7 +28,7 @@ const featuredProjects: Project[] = [
     title: "Varppu: Life Skill Development System",
     description:
       "Full-stack system with admin, coordinator, facilitator, and user roles. Implemented secure Flask backend with JWT authentication and responsive React frontend.",
-    image: "/projects/analytics-dashboard.jpg",
+    video: "/projects/0403(2).mp4",
     technologies: ["Python (Flask)", "React", "MongoDB", "JWT", "PyTest"],
     github: "https://github.com/malshi-kavindya/counseling-project---NexusNova",
   },
