@@ -112,7 +112,7 @@ export function Hero() {
                 </div>
               </div>
               {/* Education Card */}
-              <div className="absolute -top-2 -right-33 w-56 h-24 bg-card border border-border rounded-lg p-3 shadow-lg">
+              <div className="absolute -top-2 -right-20 w-46 h-24 bg-card border border-border rounded-lg p-3 shadow-lg">
                 <p className="text-xs text-muted-foreground">Education</p>
                 <p className="text-sm font-bold text-primary">
                   BSc (Hons) Computer Science
