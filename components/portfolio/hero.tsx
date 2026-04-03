@@ -5,11 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import Link from "next/link";
 
-const roles = [
-  "Software Engineer",
-  "Full Stack Developer",
-  "AI/ML Engineer",
-];
+const roles = ["Software Engineer", "Full Stack Developer", "AI/ML Engineer"];
 
 export function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -115,16 +111,23 @@ export function Hero() {
                   </div>
                 </div>
               </div>
-              {/* <div className="absolute -top-4 -right-4 w-24 h-24 bg-card border border-border rounded-lg p-3 shadow-lg">
-                <p className="text-xs text-muted-foreground">Experience</p>
-                <p className="text-2xl font-bold text-primary">3+</p>
-                <p className="text-xs text-muted-foreground">Years</p>
-              </div> 
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-card border border-border rounded-lg p-3 shadow-lg">
+              {/* Education Card */}
+              <div className="absolute -top-2 -right-33 w-56 h-24 bg-card border border-border rounded-lg p-3 shadow-lg">
+                <p className="text-xs text-muted-foreground">Education</p>
+                <p className="text-sm font-bold text-primary">
+                  BSc (Hons) Computer Science
+                </p>
+                <p className="text-xs text-muted-foreground">Undergraduate</p>
+              </div>
+
+              {/* Projects & Skills Card */}
+              <div className="absolute -bottom-4 -left-4 w-36 h-24 bg-card border border-border rounded-lg p-3 shadow-lg">
                 <p className="text-xs text-muted-foreground">Projects</p>
-                <p className="text-2xl font-bold text-primary">20+</p>
-                <p className="text-xs text-muted-foreground">Completed</p>
-              </div> */}
+                <p className="text-2xl font-bold text-primary">7+</p>
+                <p className="text-xs text-muted-foreground">
+                  React • Next.js • Python • Express.js
+                </p>
+              </div>
             </div>
           </div>
         </div>
