@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import Link from "next/link";
 
-const roles = ["Software Engineer", "Full Stack Developer", "AI/ML Engineer"];
+const roles = ["Software Engineer", "Full Stack Developer", "AI/ML Engineer", "Data Scientist"];
 
 export function Hero() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -57,7 +57,7 @@ export function Hero() {
             <p className="text-muted-foreground text-lg max-w-xl leading-relaxed">
               I build accessible, pixel-perfect digital experiences that blend
               thoughtful design with robust engineering. Passionate about AI/ML,
-              full-stack development, and data-driven solutions.
+              Data Science, full-stack development, and data-driven solutions.
             </p>
 
             <div className="flex flex-wrap gap-4">
