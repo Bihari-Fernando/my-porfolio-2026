@@ -36,25 +36,15 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed">
-              I'm a Computer Science undergraduate with hands-on experience in 
-              full-stack web development and software engineering. I have worked 
-              with technologies such as React, Next.js, Laravel, Python, and MongoDB 
-              to build scalable and secure applications.
+              I am a Computer Science undergraduate with hands-on experience in full-stack web development and software engineering. I have worked extensively with React, Next.js, Express.js, Laravel, Python, and both SQL and NoSQL to build scalable, secure, and efficient applications, focusing on clean code, modular architecture, and user-friendly interfaces.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              I completed a trainee developer internship where I fixed production 
-              bugs in Electron desktop applications and developed backend features 
-              and REST APIs. This experience strengthened my debugging, problem 
-              solving, and real-world software development skills.
+              I am highly passionate about Artificial Intelligence, Machine Learning, and Data Science, and I actively explore AI/ML applications by developing projects that leverage real-world datasets and problem-solving techniques. My strong foundation in Data Structures, Algorithms, and Object-Oriented Programming (OOP) enables me to design optimized and reliable software solutions.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              I am highly interested in Artificial Intelligence and Machine Learning 
-              and currently working on research related to lightweight deepfake 
-              detection for mobile and low-resource devices. I also actively 
-              contribute to the tech community through IEEE leadership and 
-              technical initiatives.
+              In addition to technical skills, I actively contribute to the tech community through IEEE leadership roles and technical initiatives, demonstrating teamwork, leadership, and a commitment to sharing knowledge and fostering innovation. I am driven to continuously learn and apply emerging technologies, and I am seeking an internship in Software Engineering, AI/ML, or Data Science to gain practical industry experience, contribute to impactful projects, and further develop my technical expertise.
             </p>
 
             <div className="pt-4">
