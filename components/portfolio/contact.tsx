@@ -59,7 +59,7 @@ export function Contact() {
                 Let's work together
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm currently seeking Software Engineering and AI/ML internship 
+                I'm currently seeking Software Engineering, AI/ML or Data Science internship 
                 opportunities. If you have an opportunity, collaboration idea, 
                 or technical discussion, feel free to contact me.
               </p>
