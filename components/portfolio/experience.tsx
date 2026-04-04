@@ -30,7 +30,7 @@ const experiences = [
   {
     company: "IEEE Computer Society",
     role: "Secretary & Webmaster",
-    period: "2025 — Present",
+    period: "2025 — 2026",
     location: "University Leadership",
     url: "#",
     description: [
