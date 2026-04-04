@@ -6,7 +6,7 @@ const volunteerExperiences = [
   {
     organization: "IEEE Student Branch",
     role: "Secretary",
-    period: "2023 — Present",
+    period: "2025 — 2026",
     icon: Award,
     description: [
       "Coordinating meetings and maintaining records for 150+ student members",
@@ -18,7 +18,7 @@ const volunteerExperiences = [
   {
     organization: "IEEE Student Branch",
     role: "Webmaster",
-    period: "2022 — 2023",
+    period: "2025 — 2026",
     icon: Globe,
     description: [
       "Designed and developed the official student branch website using React",
