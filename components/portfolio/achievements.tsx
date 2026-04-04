@@ -1,4 +1,4 @@
-import { Award, ExternalLink, Calendar } from "lucide-react"
+import { Award, ExternalLink, Calendar } from "lucide-react";
 
 const certifications = [
   {
@@ -29,7 +29,15 @@ const certifications = [
     credentialUrl: "#",
     logo: "QA",
   },
-]
+  {
+    title: "Introduction to GitOps (LFS169)",
+    issuer: "The Linux Foundation",
+    date: "2026",
+    credentialId: "LF-hh1rhl1jfu",
+    credentialUrl: "#",
+    logo: "LF",
+  },
+];
 
 const awards = [
   {
@@ -56,7 +64,7 @@ const awards = [
       "Managed technical platforms, websites, and digital content for IEEE Computer Society activities.",
     year: "2025",
   },
-]
+];
 
 export function Achievements() {
   return (
@@ -65,7 +73,6 @@ export function Achievements() {
       className="py-24 px-4 sm:px-6 lg:px-8 bg-card/50"
     >
       <div className="max-w-6xl mx-auto">
-
         <div className="flex items-center gap-4 mb-12">
           <span className="text-primary font-mono">06.</span>
 
@@ -77,7 +84,6 @@ export function Achievements() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-
           {/* Certifications */}
           <div>
             <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
@@ -94,7 +100,6 @@ export function Achievements() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
                 >
-
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-primary font-bold text-sm">
                       {cert.logo}
@@ -111,11 +116,9 @@ export function Achievements() {
                       <span>•</span>
                       <span>{cert.date}</span>
                     </div>
-
                   </div>
 
                   <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
-
                 </a>
               ))}
             </div>
@@ -123,7 +126,6 @@ export function Achievements() {
 
           {/* Awards */}
           <div>
-
             <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
               <Award className="h-5 w-5 text-primary" />
               Leadership & Achievements
@@ -135,7 +137,6 @@ export function Achievements() {
                   key={award.title}
                   className="relative pl-6 border-l-2 border-border hover:border-primary/50 transition-colors"
                 >
-
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full" />
 
                   <div className="flex items-center gap-2 mb-1">
@@ -152,15 +153,12 @@ export function Achievements() {
                   <p className="text-muted-foreground text-sm">
                     {award.description}
                   </p>
-
                 </div>
               ))}
             </div>
-
           </div>
-
         </div>
       </div>
     </section>
-  )
+  );
 }
