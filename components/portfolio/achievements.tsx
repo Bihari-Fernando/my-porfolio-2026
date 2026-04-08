@@ -77,11 +77,11 @@ const awards = [
 ];
 
 export function Achievements() {
-  const [selectedCert, setSelectedCert] = useState(null);
+  const [selectedCert, setSelectedCert] = useState<string | null>(null);
 
   // Close modal on ESC
   useEffect(() => {
-    const handleEsc = (e) => {
+    const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") setSelectedCert(null);
     };
     window.addEventListener("keydown", handleEsc);
