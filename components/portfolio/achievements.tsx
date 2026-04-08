@@ -1,33 +1,35 @@
-import { Award, ExternalLink, Calendar } from "lucide-react";
+'use client'
+import { useState, useEffect } from "react";
+import { Award, ExternalLink, Calendar, X } from "lucide-react";
 
 const certifications = [
   {
     title: "Introduction to Large Language Models",
     issuer: "Google Cloud",
     date: "2024",
-    credentialUrl: "#",
-    logo: "AI",
+    credentialUrl: "https://www.skills.google/public_profiles/81464639-3ad2-464a-917e-7b7a7c7d76bc/badges/8490309",
+    logoUrl: "/certificates/llm.png",
   },
   {
     title: "AI/ML Engineer – Stage 1 & 2",
     issuer: "SLIIT University",
     date: "2025",
     credentialUrl: "#",
-    logo: "ML",
+    logoUrl: "/certificates/AIML1.png",
   },
   {
     title: "Mastering Deep Learning Workshop",
     issuer: "IEEE Computer Society – University of Jaffna",
     date: "2024",
     credentialUrl: "#",
-    logo: "DL",
+    logoUrl: "/certificates/deepL.jpg",
   },
   {
     title: "TECHXCELERATE: Test Automation Workshop",
     issuer: "IEEE Student Branch – University of Jaffna",
     date: "2026",
     credentialUrl: "#",
-    logo: "QA",
+    logoUrl: "/certificates/tech.jpg",
   },
   {
     title: "Introduction to GitOps (LFS169)",
@@ -35,7 +37,15 @@ const certifications = [
     date: "2026",
     credentialId: "LF-hh1rhl1jfu",
     credentialUrl: "#",
-    logo: "LF",
+    logoUrl: "/certificates/linux.png",
+  },
+  {
+    title: "Python for Beginners",
+    issuer: "University of Moratuwa",
+    date: "2026",
+    credentialId: "WfplPkpMkF",
+    credentialUrl: "#",
+    logoUrl: "/certificates/python.png",
   },
 ];
 
@@ -67,19 +77,26 @@ const awards = [
 ];
 
 export function Achievements() {
+  const [selectedCert, setSelectedCert] = useState(null);
+
+  // Close modal on ESC
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") setSelectedCert(null);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
   return (
-    <section
-      id="achievements"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-card/50"
-    >
+    <section id="achievements" className="py-24 px-4 sm:px-6 lg:px-8 bg-card/50">
       <div className="max-w-6xl mx-auto">
+        {/* Header */}
         <div className="flex items-center gap-4 mb-12">
           <span className="text-primary font-mono">06.</span>
-
           <h2 className="text-3xl font-bold text-foreground">
             Achievements & Certifications
           </h2>
-
           <div className="flex-1 h-px bg-border" />
         </div>
 
@@ -100,17 +117,26 @@ export function Achievements() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors group"
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary font-bold text-sm">
-                      {cert.logo}
-                    </span>
+                  {/* Certificate Image */}
+                  <div
+                    className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 cursor-pointer overflow-hidden"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSelectedCert(cert.logoUrl);
+                    }}
+                  >
+                    <img
+                      src={cert.logoUrl}
+                      alt={`${cert.title} logo`}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
 
+                  {/* Info */}
                   <div className="flex-1 min-w-0">
                     <h4 className="text-foreground font-medium truncate group-hover:text-primary transition-colors">
                       {cert.title}
                     </h4>
-
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <span>{cert.issuer}</span>
                       <span>•</span>
@@ -138,27 +164,40 @@ export function Achievements() {
                   className="relative pl-6 border-l-2 border-border hover:border-primary/50 transition-colors"
                 >
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full" />
-
                   <div className="flex items-center gap-2 mb-1">
-                    <h4 className="text-foreground font-medium">
-                      {award.title}
-                    </h4>
+                    <h4 className="text-foreground font-medium">{award.title}</h4>
                   </div>
-
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                     <Calendar className="h-3 w-3" />
                     <span>{award.year}</span>
                   </div>
-
-                  <p className="text-muted-foreground text-sm">
-                    {award.description}
-                  </p>
+                  <p className="text-muted-foreground text-sm">{award.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Fullscreen Modal with X button */}
+      {selectedCert && (
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+          {/* Close Button */}
+          <button
+            className="absolute top-5 right-5 text-white hover:text-red-400 transition-colors"
+            onClick={() => setSelectedCert(null)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          {/* Certificate */}
+          <img
+            src={selectedCert}
+            alt="Certificate Fullscreen"
+            className="max-h-full max-w-full object-contain rounded-lg shadow-xl transform transition-transform duration-200 scale-100"
+          />
+        </div>
+      )}
     </section>
   );
 }
