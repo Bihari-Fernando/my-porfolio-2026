@@ -11,7 +11,10 @@ const skillCategories = [
       "C/C++",
       "SQL",
       "Perl",
-      "Prolog"
+      "Prolog",
+      "HTML",
+      "CSS",
+      "PHP"
     ],
   },
 
